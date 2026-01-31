@@ -1,0 +1,363 @@
+/* Custom styles for WideSeek project page based on eliahuhorwitz template */
+
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #1e40af;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-top.show {
+  display: flex;
+}
+
+/* Publication Title */
+.publication-title {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.publication-authors {
+  margin-bottom: 1rem;
+}
+
+.author-block {
+  display: inline-block;
+  margin: 0 0.25rem;
+}
+
+.author-block a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.author-block a:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+/* Publication Links */
+.publication-links {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.link-block {
+  margin: 0.5rem;
+}
+
+.external-link {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.external-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Tables */
+.table-container {
+  margin: 2rem 0;
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: white;
+  border: 1px solid #e5e7eb;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+}
+
+.table {
+  font-size: 0.9rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th {
+  background-color: #f8fafc;
+  color: #1f2937;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1rem 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+
+.table th:first-child {
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+.table th:last-child {
+  padding-right: 1.5rem;
+}
+
+.table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.875rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+}
+
+.table td:first-child {
+  text-align: left;
+  font-weight: 500;
+  padding-left: 1.5rem;
+  color: #1f2937;
+}
+
+.table td:last-child {
+  padding-right: 1.5rem;
+}
+
+.table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Group header rows */
+.table tbody tr.has-background-grey-lighter {
+  background-color: #f9fafb;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.table tbody tr.has-background-grey-lighter td {
+  padding: 0.3rem 1.5rem;
+  border-bottom: 2px solid #e5e7eb;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.table tbody tr.has-background-grey-lighter:hover {
+  background-color: #f3f4f6;
+  transform: none;
+}
+
+/* Best row highlighting */
+.table tbody tr.has-background-info-light {
+  background-color: #eff6ff;
+  border-left: 3px solid #60a5fa;
+  font-weight: 500;
+}
+
+.table tbody tr.has-background-info-light:hover {
+  background-color: #dbeafe;
+}
+
+.table tbody tr.has-background-info-light td {
+  border-bottom-color: #bfdbfe;
+}
+
+/* Improvement text styling */
+.table .has-text-danger {
+  color: #dc2626 !important;
+  font-weight: 600;
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+/* Number alignment for better readability */
+.table td {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Strong text in table cells */
+.table td strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Better spacing for table caption */
+.table-container+p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Table borders and rounded corners */
+.table-container .table {
+  border: none;
+}
+
+.table thead th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.table thead th:last-child {
+  border-top-right-radius: 8px;
+}
+
+/* Responsive table improvements */
+@media screen and (max-width: 768px) {
+  .table-container {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  .table th,
+  .table td {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .table th:first-child,
+  .table td:first-child {
+    padding-left: 0.75rem;
+  }
+
+  .table th:last-child,
+  .table td:last-child {
+    padding-right: 0.75rem;
+  }
+}
+
+/* BibTeX Section */
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+#bibtex-code {
+  background-color: #ffffff !important;
+  padding: 1.5rem !important;
+  border-radius: 12px !important;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  margin: 0 !important;
+  transition: box-shadow 0.3s ease;
+}
+
+#bibtex-code:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+}
+
+#bibtex-code code {
+  background-color: #ffffff !important;
+  color: #1f2937 !important;
+  font-family: 'Courier New', Courier, 'Liberation Mono', monospace;
+  display: block;
+  white-space: pre;
+}
+
+/* Override Bulma and section background for BibTeX code */
+section#BibTeX #bibtex-code,
+section.hero.is-light #bibtex-code {
+  background-color: #ffffff !important;
+}
+
+section#BibTeX #bibtex-code code,
+section.hero.is-light #bibtex-code code {
+  background-color: #ffffff !important;
+}
+
+.copy-bibtex-btn {
+  transition: transform 0.2s ease;
+}
+
+.copy-bibtex-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Image styling */
+.image img {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image:hover img {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Box styling for contributions */
+.box {
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .publication-title {
+    font-size: 1.75rem;
+  }
+
+  .publication-authors {
+    font-size: 0.9rem;
+  }
+
+  .table {
+    font-size: 0.75rem;
+  }
+
+  .scroll-to-top {
+    width: 2.5rem;
+    height: 2.5rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
